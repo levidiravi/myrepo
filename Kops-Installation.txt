@@ -1,0 +1,20 @@
+aws s3 mb s3://levidislab.in.k8s --region ap-south-1
+
+export KOPS_CLUSTER_NAME=levidislab.in
+export KOPS_STATE_STORE=s3://levidislab.in.k8s
+
+kops create cluster \
+--state=${KOPS_STATE_STORE} \
+--node-count=2 \
+--master-size=t3.medium \
+--node-size=t3.medium \
+--zones=ap-south-1a \
+--name=${KOPS_CLUSTER_NAME} \
+--dns private \
+--master-count 1
+
+kubeadm join 172.31.2.193:6443 --token vd60gi.3g6s5z9lmlzt9slv     --discovery-token-ca-cert-hash sha256:45013b1b46ed6aaffceec67509278431bde86e6f4c66d681b138cdbe79c33791
+
+ssh -i ~/.ssh/id_rsa  ubuntu@ec2-3-109-216-83.ap-south-1.compute.amazonaws.com
+
+ssh admin@control-plane-ap-south-1a.masters.levidislab.in

@@ -1,0 +1,17 @@
+php:7.1-apache
+
+---
+version: '3.8'
+services:
+  mysqlserver:
+    image: mysql
+	environment: 
+	  - MYSQL_ROOT_PASSWORD=password
+  ApacheServer:
+    image: httpd
+	ports:
+	  - 8888:80
+	links:
+	  - mysqlserver:mysql
+...
+	

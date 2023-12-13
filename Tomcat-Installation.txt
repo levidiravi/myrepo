@@ -1,0 +1,9 @@
+wget https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.35/bin/apache-tomcat-8.5.35.tar.gz
+
+wget https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war
+
+http://43.205.125.139:8080/sample
+
+235570
+
+83972560274

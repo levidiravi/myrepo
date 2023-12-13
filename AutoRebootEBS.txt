@@ -1,0 +1,2 @@
+
+/dev/xvdf       /ktexperts   xfs    defaults,nofail        0       0

@@ -1,0 +1,3 @@
+pscp -i /Users/Admin/Downloads/LinuxKeyPair.ppk /Users/Admin/Downloads/apache-tomcat-8.5.35.tar ec2-user@ec2-43-204-30-94.ap-south-1.compute.amazonaws.com:/home/ec2-user
+
+pscp -i /Users/Admin/Downloads/LinuxKeyPairv1.0.ppk /Users/Admin/Downloads/helloworld.war ec2-user@ec2-43-204-30-94.ap-south-1.compute.amazonaws.com:/home/ec2-user

@@ -1,0 +1,23 @@
+---
+version: '3.8'
+services:
+  mysqlserver:
+    image: mysql
+	volumes:
+	  - myvolume:/var/lib/mysql
+	ports:
+	  - 3206:3206
+	environment: 
+	  - MYSQL_ROOT_PASSWORD=password
+  TomcatServer:
+    image: tomee
+	volumes:
+	  - myvolume:/usr/local/tomcat/webapps
+	ports:
+	  - 8080:8080
+	links:
+	  - mysqlserver:mysql
+volumes:
+  myvolume:
+...
+	

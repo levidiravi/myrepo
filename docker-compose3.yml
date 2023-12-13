@@ -1,0 +1,26 @@
+---
+version: '3.8'
+services:
+  mysqldb:
+    image: mysql
+    environment: 
+      - MYSQL_ROOT_PASSWORD=levidis
+    ports:
+      - 3333:3206
+    container_name: mysqldb
+  webserver:
+    image: httpd:2.4
+    ports:
+      - 8080:80
+    links:
+      - mysqldb
+    container_name: webserver
+  myphp:
+    image: php:7.2-apache
+    ports:
+      - 80:80
+    links:
+      - webserver
+      - mysqldb
+    container_name: myphp
+...
